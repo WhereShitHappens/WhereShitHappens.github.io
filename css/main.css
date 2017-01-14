@@ -164,34 +164,28 @@ p.paragraph {
 .sidedevices {
   position: relative;
 }.header {
-	padding: 20px 0 90px 0;
+	padding: 20px 0 60px 0;
 	overflow: hidden;
 }
-.header .heading {
-	margin: 120px 0 0 0;
-}
-.header .centerdevices {
-	margin: 90px 0 0 0;
+.header .sidedevices {
+	margin: 60px 0 0
 }
 @media (max-width: 900px) {
-	.header .heading {
+	.header .sidedevices {
+		min-height: inherit;
+	}
+	.header .flex {
+		flex-direction: column;
+	}
+	.header	.heading {
 		margin-top: 60px;
 	}
-}.ctas-input {
-	outline: none;
-	border: none;
-	border-radius: 3px;
-	font-size: 15px;
-	height: 40px;
-	line-height: 40px;
-	padding: 0 15px;
-	width: 260px;
+	.header	.col-6 {
+		width: 100%;
+	}
+}.ctas-button {
 	display: inline-block;
-}
-.ctas-button {
-	display: inline-block;
-	margin: 0 0 0 10px;
-	height: 40px;
+	height: 42px;
 	line-height: 38px;
 	padding: 0 30px;
 	background: #fff;
@@ -202,15 +196,28 @@ p.paragraph {
 	letter-spacing: .3px;
 	border: 1px solid white;
 	text-decoration: none;
+	color: black;
+}
+.iphoneandroid 	.ctas-button:nth-of-type(2) {
+	margin: 0 0 0 10px;
+}
+.ctas-button img,
+.ctas-button span {
+	display: inline-block;
+	vertical-align: middle;
+	opacity: .8;
+}
+.ctas-button img {
+	height: 18px;
+	margin-right: 10px;
 }
 @media (max-width: 440px) {
-	.ctas-input,
 	.ctas-button {
 		display: block;
 		width: 100%;
 		text-align: center;
 	}
-	.ctas-button {
+	.iphoneandroid 	.ctas-button:nth-of-type(2) {
 		margin: 10px 0 0 0;
 	}
 }.socialproof {
@@ -281,20 +288,45 @@ p.paragraph {
 	.ctas-button-2 {
 		margin: 10px 0 0 0;
 	}
-}.feature4 {
-	padding: 90px 0;
+}.feature2 {
 	border-bottom: 1px solid rgba(0,0,0,.1);
 }
+.feature2	.col-6:nth-of-type(2n - 1) {
+	padding: 90px 90px 90px 20px;
+	border-right: 1px solid rgba(0,0,0,.1)
+}
+.feature2	.col-6:nth-of-type(3n - 1) {
+	padding: 90px 20px 90px 90px;
+}
+.feature2 .emoji {
+	font-size: 55px;
+	color: black
+}
 @media (max-width: 900px) {
-	.feature4 .sidedevices {
-		min-height: inherit;
-		margin-top: 60px;
+	.feature2 .emoji {
+    font-size: 40px;
+  }
+	.feature2	.col-6:nth-of-type(1) {
+		padding: 45px 45px 45px 20px;
 	}
-	.feature4 .flex {
+	.feature2	.col-6:nth-of-type(2) {
+		padding: 45px 20px 45px 45px;
+	}
+}
+@media (max-width: 600px) {
+	.feature2 {
+		padding: 90px 0;
+	}
+	.feature2 .flex {
 		flex-direction: column;
 	}
-	.feature4	.col-5,
-	.feature4	.col-6 {
+	.feature2	.col-6:nth-of-type(1),
+	.feature2	.col-6:nth-of-type(2) {
+		padding: 0 20px;
+		border: none;
 		width: 100%;
+	}
+	.feature2	.col-6:nth-of-type(2) {
+		margin-top: 30px;
 	}
 }
