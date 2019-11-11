@@ -61,9 +61,11 @@ function preload ()
     // this.load.image('bomb', 'assets/bomb.png');
     // this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
 
-    this.load.path = 'assets/animations/cybercity/';
+    // this.load.path = 'assets/animations/cybercity/';
+    // this.load.multiatlas('cybercity', 'cybercity-multi.json');
 
-    this.load.multiatlas('cybercity', 'cybercity-multi.json');
+    this.load.image('poo', 'assets/sprites/poo.png');
+   this.load.spritesheet('mummy', 'assets/animations/mummy37x45.png', { frameWidth: 37, frameHeight: 45 });
 }
 
 function create ()
@@ -143,9 +145,51 @@ function create ()
     //
     // this.physics.add.collider(player, bombs, hitBomb, null, this);
 
-    this.anims.create({ key: 'fly', frames: this.anims.generateFrameNames('cybercity', { start: 0, end: 98 }), repeat: -1 });
 
-   this.add.sprite(400, 300).setScale(2.7).play('fly');
+
+   //  this.anims.create({ key: 'fly', frames: this.anims.generateFrameNames('cybercity', { start: 0, end: 98 }), repeat: -1 });
+   // this.add.sprite(400, 300).setScale(2.7).play('fly');
+
+
+
+   var mummyAnimation = this.anims.create({
+    key: 'walk',
+    frames: this.anims.generateFrameNumbers('mummy'),
+    frameRate: 16,
+    repeat: 0
+});
+
+var sprite = this.add.sprite(50, 300, 'mummy').setScale(4);
+
+sprite.play('walk');
+
+sprite.anims.setRepeat(7);
+
+this.tweens.add({
+    targets: sprite,
+    x: 750,
+    duration: 8800,
+    ease: 'Linear'
+});
+
+sprite.on('animationrepeat-walk', function () {
+
+    var poop = this.add.image(sprite.x - 32, 300, 'poo').setScale(0.5);
+
+    this.tweens.add({
+        targets: poop,
+        props: {
+            x: {
+                value: '-=64', ease: 'Power1'
+            },
+            y: {
+                value: '+=50', ease: 'Bounce.easeOut'
+            }
+        },
+        duration: 750
+    });
+
+}, this);
 }
 
 // function update ()
