@@ -6,9 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="ここにサイト説明を入れます">
 <link rel="stylesheet" href="css/style.css">
+<audio autoplay>
+  <source src="bg.mp3" type="audio/mpeg">
+</audio>
+
+
 </head>
 
 <body class="home">
+
+
+
 
 <div id="trigger-point">
 
@@ -18,9 +26,14 @@
 
 <!--動画＆スライドショー-->
 <aside id="mainimg">
+<div class="slide slide1"></div>
 <div class="slide slide1"><video src="images/balliland.mp4" autoplay loop muted playsinline></video></div>
+<div class="slide slide2"><video src="images/dust.mp4" autoplay loop muted playsinline></video></div>
+<div class="slide slide3"><video src="images/osu.mp4" autoplay loop muted playsinline></video></div>
+<div class="slide slide4"><video src="images/UDK.mp4" autoplay loop muted playsinline></video></div>
+<div class="slide slide5"><video src="images/vita.mp4" autoplay loop muted playsinline></video></div>
+<div class="slide slide6"><video src="images/sneakers.mp4" autoplay loop muted playsinline></video></div>
 <div class="slide slide2"></div>
-<div class="slide slide3"></div>
 </aside>
 
 </header>
@@ -156,8 +169,27 @@
 </footer>
 
 <!--クーポンボタン-->
-<div id="message-parts"><a href="#"><i class="fa-solid fa-gift"></i>お得クーポン</a></div>
+<div id="message-parts">
+        <a href="#" id="playButton"><i class="fa-solid fa-gift"></i> お得クーポン</a>
+    </div>
+ <!-- Audio element -->
+    <audio id="audioPlayer" src="bg.mp3" preload="auto"></audio>
+    
+       
 
+<script>
+        // Get the button and audio elements
+        const playButton = document.getElementById('playButton');
+        const audioPlayer = document.getElementById('audioPlayer');
+
+        // Add an event listener to the button
+        playButton.addEventListener('click', function() {
+            // Play the audio when the button is clicked
+            audioPlayer.play();
+        });
+    </script>
+    
+    
 <!--ページの上部へ戻るボタン-->
 <div class="pagetop"><a href="#"><i class="fas fa-angle-double-up"></i></a></div>
 
