@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>飲食店（カフェ・居酒屋）向け 無料ホームページテンプレート tp_foods10</title>
+<title>aris drosos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="ここにサイト説明を入れます">
 <link rel="stylesheet" href="css/style.css">
@@ -22,7 +22,7 @@
 
 <header>
 
-<h1 id="logo"><a href="index.html"><img src="images/aris_website.png" alt="お店の名前"></a></h1>
+<h1 id="logo"><a href="aris.pdf"><img src="images/aris_website.png" alt="お店の名前"></a></h1>
 
 <!--動画＆スライドショー-->
 <aside id="mainimg">
